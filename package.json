@@ -1,0 +1,39 @@
+{
+  "name": "fattest-cat",
+  "version": "1.0.0",
+  "description": "Find fattest cat currently up for adoption at VHS.",
+  "author": "Lexi Ross",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "main": "server.js",
+  "bin": "src/print_fattest_cat.js",
+  "scripts": {
+    "precommit": "eslint src",
+    "print": "node src/print_fattest_cat.js"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "opener": "^1.5.2",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "prettier": "2.4.1"
+  },
+  "license": "ISC",
+  "repository": "lexiross/fattest-cat",
+  "keywords": [
+    "cat",
+    "cats",
+    "spca",
+    "fat",
+    "fatter",
+    "fattest",
+    "meow"
+  ]
+}
