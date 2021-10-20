@@ -5,6 +5,7 @@ const REQ_URL = 'https://www.shelterluv.com/api/v3/available-animals/11886?speci
 exports.fetchCatItems = async () => {
   const data = await request.get(REQ_URL)
   const response = JSON.parse(data)
+  
   return response.animals
     .filter(a => a.weight !== null)
     .map(a => ({ name: a.name, weight: a.weight, url: a.public_url }))
