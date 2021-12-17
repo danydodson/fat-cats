@@ -1,11 +1,11 @@
 const opener = require('opener')
-const { fetchCatItems, fetchCatDetails } = require('./fetch_cats')
+const { fetchCatItems, fetchCatDetails } = require('./fetch-cats')
 require('colors')
 
 const METRIC = process.argv.includes('--metric')
 const GRAMS_PER_OZ = 28.3495
 
-async function main() {
+const main = async () => {
   console.log('Accessing Evansville VHS (Cat Department)...')
   const catProfiles = await fetchCatItems()
 
@@ -14,7 +14,9 @@ async function main() {
     return
   }
 
-  console.log(`Cat information accessed. ${catProfiles.length} cats found. Beginning weighing process...`)
+  console.log(
+    `Cat information accessed. ${catProfiles.length} cats found. Beginning weighing process...`,
+  )
   const cats = []
 
   for (const catProfile of catProfiles) {
@@ -25,16 +27,18 @@ async function main() {
     }
   }
 
-  const highestWeight = Math.max(...cats.map(c => c.weight))
-  const fattestCats = cats.filter(c => c.weight == highestWeight)
-  const names = fattestCats.map(c => c.name)
+  const highestWeight = Math.max(...cats.map((c) => c.weight))
+  const fattestCats = cats.filter((c) => c.weight == highestWeight)
+  const names = fattestCats.map((c) => c.name)
   const tie = fattestCats.length > 1
 
   const introText = `The fattest ${tie ? 'cats are' : 'cat is'}`.yellow
 
-  const nameText = (tie
-    ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`
-    : names[0]).green.underline
+  const nameText = (
+    tie
+      ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`
+      : names[0]
+  ).green.underline
 
   const descriptionText = (tie ? 'They each weigh' : 'Weighing').yellow
 
@@ -44,7 +48,9 @@ async function main() {
 
   const openText = `Opening cat ${tie ? 'profiles' : 'profile'}...`.yellow
 
-  console.log(`${introText} ${nameText}. ${descriptionText} ${weightText}. \n${openText}`)
+  console.log(
+    `${introText} ${nameText}. ${descriptionText} ${weightText}. \n${openText}`,
+  )
 
   setTimeout(() => {
     for (const cat of fattestCats) {
@@ -59,5 +65,7 @@ main()
 function metricWeightForHumans(ounces) {
   const grams = GRAMS_PER_OZ * ounces
   const kilos = grams / 1000
-  return kilos >= 1 ? `${kilos.toLocaleString('en-US', { maximumFractionDigits: 1 })} kg` : `${grams} g`
+  return kilos >= 1
+    ? `${kilos.toLocaleString('en-US', { maximumFractionDigits: 1 })} kg`
+    : `${grams} g`
 }

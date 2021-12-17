@@ -1,16 +1,12 @@
 {
-  "name": "fattest-cat",
+  "name": "fat-cats",
   "version": "1.0.0",
   "description": "Find fattest cat currently up for adoption at VHS.",
-  "author": "Lexi Ross",
-  "engines": {
-    "node": ">=8.0.0"
-  },
+  "bin": "src/print-fattest.js",
   "main": "server.js",
-  "bin": "src/print_fattest_cat.js",
   "scripts": {
-    "precommit": "eslint src",
-    "print": "node src/print_fattest_cat.js"
+    "start": "nodemon src/print-fattest.js",
+    "print": "node src/print-fattest.js"
   },
   "dependencies": {
     "colors": "^1.4.0",
@@ -19,14 +15,11 @@
     "request-promise": "^4.2.6"
   },
   "devDependencies": {
-    "eslint": "^8.0.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.2",
-    "prettier": "2.4.1"
+    "nodemon":"^2.0.15"
   },
+  "author": "Dany Dodson",
   "license": "ISC",
-  "repository": "lexiross/fattest-cat",
+  "repository": "danydodson/fat-cat",
   "keywords": [
     "cat",
     "cats",

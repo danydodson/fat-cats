@@ -6,15 +6,15 @@ Some cats are born fat, some achieve fatness, others have fatness thrust upon th
 
 Compatible with node 6+
 
-`npm install -g fattest-cat`
+`npm install -g fat-cats`
 
 ## Usage
 
 ##### Standard
-`$ fattest-cat`
+`$ fat-cats`
 
 ##### Metric units
-`$ fattest-cat --metric`
+`$ fat-cats --metric`
 
 ##### Garfield Mode
-`$ fattest-cat --garfield`
+`$ fat-cats --garfield`
