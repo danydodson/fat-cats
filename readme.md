@@ -1,4 +1,4 @@
-![demo](https://github.com/lexiross/fattest-cat/blob/master/cli.gif?raw=true)
+![demo](https://github.com/lexiross/fattest-cat/blob/master/assets/demo.gif?raw=true)
 
 Some cats are born fat, some achieve fatness, others have fatness thrust upon them. You can find all of them at the San Francisco SPCA using this tool.
 
