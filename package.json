@@ -1,7 +1,7 @@
 {
   "name": "fat-cats",
   "version": "1.0.0",
-  "description": "Find fattest cat currently up for adoption at VHS.",
+  "description": "Find the fattest cat currently up for adoption at VHS.",
   "bin": "src/print-fattest.js",
   "scripts": {
     "start": "nodemon src/print-fattest.js",
