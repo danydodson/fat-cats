@@ -14,9 +14,7 @@ const main = async () => {
     return
   }
 
-  console.log(
-    `Cat information accessed. ${catProfiles.length} cats found. Beginning weighing process...`,
-  )
+  console.log(`Cat information accessed. ${catProfiles.length} cats found. Beginning weighing process...`)
   const cats = []
 
   for (const catProfile of catProfiles) {
@@ -34,23 +32,15 @@ const main = async () => {
 
   const introText = `The fattest ${tie ? 'cats are' : 'cat is'}`.yellow
 
-  const nameText = (
-    tie
-      ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`
-      : names[0]
-  ).green.underline
+  const nameText = (tie ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}` : names[0]).green.underline
 
   const descriptionText = (tie ? 'They each weigh' : 'Weighing').yellow
 
-  const weightText = METRIC
-    ? metricWeightForHumans(highestWeight).yellow
-    : `${fattestCats[0].weight} lbs`.yellow
+  const weightText = METRIC ? metricWeightForHumans(highestWeight).yellow : `${fattestCats[0].weight} lbs`.yellow
 
   const openText = `Opening cat ${tie ? 'profiles' : 'profile'}...`.yellow
 
-  console.log(
-    `${introText} ${nameText}. ${descriptionText} ${weightText}. \n${openText}`,
-  )
+  console.log(`${introText} ${nameText}. ${descriptionText} ${weightText}. \n${openText}`)
 
   setTimeout(() => {
     for (const cat of fattestCats) {
@@ -65,7 +55,5 @@ main()
 function metricWeightForHumans(ounces) {
   const grams = GRAMS_PER_OZ * ounces
   const kilos = grams / 1000
-  return kilos >= 1
-    ? `${kilos.toLocaleString('en-US', { maximumFractionDigits: 1 })} kg`
-    : `${grams} g`
+  return kilos >= 1 ? `${kilos.toLocaleString('en-US', { maximumFractionDigits: 1 })} kg` : `${grams} g`
 }

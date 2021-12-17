@@ -7,12 +7,11 @@ exports.fetchCatItems = async () => {
   const response = JSON.parse(data)
 
   return response.animals
-    .filter(a => a.weight !== null)
-    .map(a => ({ name: a.name, weight: a.weight, url: a.public_url }))
+    .filter((a) => a.weight !== null)
+    .map((a) => ({ name: a.name, weight: a.weight, url: a.public_url }))
 }
 
 exports.fetchCatDetails = async (cat) => {
   const { name, weight, url } = await cat
   return { name, weight, url }
 }
-

@@ -3,20 +3,19 @@
   "version": "1.0.0",
   "description": "Find fattest cat currently up for adoption at VHS.",
   "bin": "src/print-fattest.js",
-  "main": "server.js",
   "scripts": {
     "start": "nodemon src/print-fattest.js",
-    "print": "node src/print-fattest.js"
+    "print": "node src/print-fattest.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "colors": "^1.4.0",
     "opener": "^1.5.2",
+    "nodemon": "^2.0.15",
     "request": "^2.88.2",
     "request-promise": "^4.2.6"
   },
-  "devDependencies": {
-    "nodemon":"^2.0.15"
-  },
+  "devDependencies": {},
   "author": "Dany Dodson",
   "license": "ISC",
   "repository": "danydodson/fat-cat",
